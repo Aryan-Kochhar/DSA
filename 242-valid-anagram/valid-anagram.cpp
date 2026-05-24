@@ -4,7 +4,16 @@ public:
         int n1 = s.length();
         int n2 = t.length();
         if (n1!=n2) return false;
-        sort(s.begin(),s.end()); sort(t.begin(),t.end());
-        return s==t;
+        unordered_map<char,int> mpp;
+        for (char ch:s){
+            mpp[ch]++;
+        }
+        for (char ch:t){
+            if (mpp.find(ch)==mpp.end() || mpp[ch]==0){
+                return false;
+            }
+            mpp[ch]--;
+        }
+        return true;
     }
 };
