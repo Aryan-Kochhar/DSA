@@ -9,29 +9,28 @@
  */
 class Solution {
 public:
-    bool getPath(TreeNode *root,vector<int> &ans,int n){
+    bool getPath(TreeNode *root,vector<TreeNode*> &ans,TreeNode *n){
         if (!root) return false;
-        ans.push_back(root->val);
-        if (root->val == n) return true;
+        ans.push_back(root);
+        if (root == n) return true;
         if (getPath(root->left,ans,n) || getPath(root->right,ans,n)) return true;
         ans.pop_back();
         return false;
     }
 
-    vector<int> rootToNode(TreeNode *root,int n){
-        vector<int> ans;
-        if (root == nullptr) return ans;
+    vector<TreeNode*> rootToNode(TreeNode *root,TreeNode *n){
+        vector<TreeNode*> ans;
         getPath(root,ans,n);
         return ans;
     }
 
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
         if (root == nullptr) return nullptr;
-        vector<int> path1 = rootToNode(root,p->val);
-        vector<int> path2 = rootToNode(root,q->val);
+        vector<TreeNode*> path1 = rootToNode(root,p);
+        vector<TreeNode*> path2 = rootToNode(root,q);
 
         int i = 0;
         while (i<path1.size() && i<path2.size() && path1[i]==path2[i]) i++;
-        return new TreeNode(path1[i-1]);
+        return path1[i-1];
     }
 };
