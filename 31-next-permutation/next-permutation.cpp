@@ -9,8 +9,8 @@ public:
                 break;
             }
         }
-        if (firstIndex != -1){
-        int swapIndex = firstIndex;
+        if (firstIndex !=-1){
+            int swapIndex = firstIndex;
             for (int i=n-1;i>=firstIndex+1;i--){
                 if (arr[i]>arr[firstIndex]){
                     swapIndex = i;
