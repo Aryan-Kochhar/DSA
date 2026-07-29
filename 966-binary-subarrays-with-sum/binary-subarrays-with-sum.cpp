@@ -1,17 +1,19 @@
 class Solution {
 public:
     int numSubarraysWithSum(vector<int>& nums, int goal) {
-        int cnt = 0;
-        for (int i=0;i<nums.size();i++){
-            int cnt1=nums[i];
-            int j = i+1;
-            if (cnt1 == goal) cnt++;
-            while (j<nums.size()){
-                cnt1+=nums[j];
-                if (cnt1 == goal) cnt+=1;
-                j++;
+        return (int) atmost(nums,goal)-atmost(nums,goal-1);
+    }
+    int atmost(const vector<int> &nums,int goals){
+        if (goals<0) return 0;
+        int l = 0,sum=0, ans = 0;
+        for (int r=0;r<nums.size();r++){
+            sum+=nums[r];
+            while (sum>goals){
+                sum-=nums[l];
+                l++;
             }
+            ans += r-l+1;
         }
-        return cnt;
+        return ans;
     }
 };
