@@ -8,7 +8,7 @@ public:
         queue<pair<pair<int,int>,int>> q;
         for (int i=0;i<n;i++){
             for (int j=0;j<m;j++){
-                if (mat[i][j]==0){
+                if (mat[i][j]==0) {
                     vis[i][j] = 1;
                     q.push({{i,j},0});
                 }
@@ -19,14 +19,14 @@ public:
             int col = q.front().first.second;
             int distance = q.front().second;
             q.pop();
+            dist[row][col] = distance;
             int dr[] = {-1,0,1,0};
             int dc[] = {0,-1,0,1};
-            dist[row][col] = distance;
             for (int i=0;i<4;i++){
-                int nrow = row + dr[i];
-                int ncol = col + dc[i];
+                int nrow = row+dr[i];
+                int ncol = col+dc[i];
                 if (nrow>=0 && ncol>=0 && nrow<n && ncol<m && vis[nrow][ncol]==0){
-                    vis[nrow][ncol] = 1;
+                    vis[nrow][ncol]=1;
                     q.push({{nrow,ncol},distance+1});
                 }
             }
