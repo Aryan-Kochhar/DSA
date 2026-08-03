@@ -3,14 +3,19 @@ public:
     void dfs(int i,int j,vector<vector<int>> &vis,vector<vector<char>> &grid){
         int n = grid.size();
         int m = grid[0].size();
-        if (i<n && j<m && i>=0 && j>=0 && grid[i][j]=='1' && !vis[i][j]){
-            vis[i][j] = 1;
-            int dr[] = {-1,0,1,0};
-            int dc[] = {0,-1,0,1};
-            for (int k=0;k<4;k++){
-                dfs(i+dr[k],j+dc[k],vis,grid);
+        int dr[] = {-1,0,1,0};
+        int dc[] = {0,-1,0,1};
+
+        vis[i][j] = 1;
+        for (int k=0;k<4;k++){
+            // dfs(i+dr[k],j+dc[k],vis,grid);
+            int nr = i + dr[k];
+            int nc = j + dc[k];
+            if(nr >= 0 && nr < n && nc >= 0 && nc < m && !vis[nr][nc] && grid[nr][nc] == '1'){
+                dfs(nr,nc,vis,grid);
             }
         }
+        //if (i<n && j<m && i>=0 && j>=0 && grid[i][j]=='1' && !vis[i][j]){
     }
     int numIslands(vector<vector<char>>& grid) {
         int n = grid.size();
