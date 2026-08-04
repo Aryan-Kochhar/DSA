@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool check(int start,int V,vector<int> &colour,const vector<vector<int>> &graph){
+    bool check(const int start,const int V,vector<int> &colour,const vector<vector<int>> &graph){
         queue<int> q;
         q.push(start);
         colour[start] = 0;
