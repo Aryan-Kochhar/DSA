@@ -19,19 +19,19 @@ public:
         return false;
     }
 
-    vector<int> eventualSafeNodes(vector<vector<int>>& graph) {
-        int n = graph.size();
+    vector<int> eventualSafeNodes(vector<vector<int>>&adj) {
+        int n = adj.size();
         vector<int> vis(n,0);
         vector<int> visPath(n,0);
-        vector<vector<int>> adj(n);
+        // vector<vector<int>> adj(n);
         vector<int> safeNodes;
         vector<int> check(n,0);
 
-        for (int i=0;i<n;i++){
-            for (auto it:graph[i]){
-                adj[i].push_back(it);
-            }
-        }
+        // for (int i=0;i<n;i++){
+        //     for (auto it:adj[i]){
+        //         adj[i].push_back(it);
+        //     }
+        // }
         for (int i=0;i<n;i++){
             if (!vis[i]){
                 dfsCheck(i,adj,vis,visPath,check);
