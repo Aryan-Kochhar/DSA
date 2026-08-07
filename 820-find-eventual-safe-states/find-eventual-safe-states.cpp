@@ -1,47 +1,37 @@
 class Solution {
 public:
-
-    bool dfsCheck(int node,const vector<vector<int>> &adj,vector<int> &vis, vector<int> &visPath,vector<int> &check){
+//terminal node - outdegree = 0
+    bool dfsCheck(int node,const vector<vector<int>> &graph,vector<int> &vis,vector<int> &pathVis,vector<int> &check){
         vis[node] = 1;
-        check[node] = 0;
-        visPath[node] = 1;
-        for (auto it:adj[node]){
+        pathVis[node] = 1;
+        for (auto it:graph[node]){
             if (!vis[it]){
-                if (dfsCheck(it,adj,vis,visPath,check) == true) {
-                    check[node] = 0;
-                    return true;
-                }
+                if (dfsCheck(it,graph,vis,pathVis,check) == true) return true;
             }
-            else if (visPath[it] == true) return true;
+            else if (pathVis[it] == 1) return true;
         }
-        visPath[node] = 0;
+        pathVis[node] = 0;
         check[node] = 1;
         return false;
     }
 
-    vector<int> eventualSafeNodes(vector<vector<int>>&adj) {
-        int n = adj.size();
+    vector<int> eventualSafeNodes(vector<vector<int>>& graph) {
+        int n = graph.size();
         vector<int> vis(n,0);
-        vector<int> visPath(n,0);
-        // vector<vector<int>> adj(n);
-        vector<int> safeNodes;
+        vector<int> pathVis(n,0);
         vector<int> check(n,0);
 
-        // for (int i=0;i<n;i++){
-        //     for (auto it:adj[i]){
-        //         adj[i].push_back(it);
-        //     }
-        // }
+        vector<int> ans;
+
         for (int i=0;i<n;i++){
             if (!vis[i]){
-                dfsCheck(i,adj,vis,visPath,check);
+                dfsCheck(i,graph,vis,pathVis,check);
             }
         }
 
         for (int i=0;i<n;i++){
-            if (check[i]==1) safeNodes.push_back(i);
+            if (check[i] == 1) ans.push_back(i);
         }
-
-        return safeNodes;
+        return ans;
     }
 };
