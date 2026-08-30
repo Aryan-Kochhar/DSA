@@ -7,11 +7,10 @@ public:
             mpp[nums[i]] = i;
         }
         for (int i=0;i<n;i++){
-            int comp = target - nums[i];
-            if (mpp.count(comp) && mpp[comp]!=i){
-                return {mpp[comp],i};
-            }
+            int complement = target - nums[i];
+            if (mpp.count(complement) && mpp[complement]!=i) return {mpp[complement],i};
         }
+        
         return {};
     }
 };
