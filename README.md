@@ -5,6 +5,7 @@ A collection of LeetCode questions to ace the coding interviews! - Created using
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/Aryan-Kochhar/DSA/tree/master/0001-two-sum) |
+| [0014-longest-common-prefix](https://github.com/Aryan-Kochhar/DSA/tree/master/0014-longest-common-prefix) |
 | [0036-valid-sudoku](https://github.com/Aryan-Kochhar/DSA/tree/master/0036-valid-sudoku) |
 ## Hash Table
 |  |
@@ -35,4 +36,12 @@ A collection of LeetCode questions to ace the coding interviews! - Created using
 |  |
 | ------- |
 | [0096-unique-binary-search-trees](https://github.com/Aryan-Kochhar/DSA/tree/master/0096-unique-binary-search-trees) |
+## String
+|  |
+| ------- |
+| [0014-longest-common-prefix](https://github.com/Aryan-Kochhar/DSA/tree/master/0014-longest-common-prefix) |
+## Trie
+|  |
+| ------- |
+| [0014-longest-common-prefix](https://github.com/Aryan-Kochhar/DSA/tree/master/0014-longest-common-prefix) |
 <!---LeetCode Topics End-->
