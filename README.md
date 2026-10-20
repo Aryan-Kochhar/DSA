@@ -15,4 +15,24 @@ A collection of LeetCode questions to ace the coding interviews! - Created using
 |  |
 | ------- |
 | [0036-valid-sudoku](https://github.com/Aryan-Kochhar/DSA/tree/master/0036-valid-sudoku) |
+## Math
+|  |
+| ------- |
+| [0096-unique-binary-search-trees](https://github.com/Aryan-Kochhar/DSA/tree/master/0096-unique-binary-search-trees) |
+## Dynamic Programming
+|  |
+| ------- |
+| [0096-unique-binary-search-trees](https://github.com/Aryan-Kochhar/DSA/tree/master/0096-unique-binary-search-trees) |
+## Tree
+|  |
+| ------- |
+| [0096-unique-binary-search-trees](https://github.com/Aryan-Kochhar/DSA/tree/master/0096-unique-binary-search-trees) |
+## Binary Search Tree
+|  |
+| ------- |
+| [0096-unique-binary-search-trees](https://github.com/Aryan-Kochhar/DSA/tree/master/0096-unique-binary-search-trees) |
+## Binary Tree
+|  |
+| ------- |
+| [0096-unique-binary-search-trees](https://github.com/Aryan-Kochhar/DSA/tree/master/0096-unique-binary-search-trees) |
 <!---LeetCode Topics End-->
